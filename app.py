@@ -149,7 +149,7 @@ def ChannelDetail(cha):
                                 video_thumbnail=vd_response['items'][0]['snippet']['thumbnails'],
                                 video_comments_count=int( vd_response['items'][0]['statistics']['commentCount']),
                                 video_favorite_count=int( vd_response['items'][0]['statistics']['favoriteCount']),
-                                video_like_count= int(vd_response['items'][0]['statistics']['likeCount']),
+                                video_like_count= int(vd_response['items'][0]['statistics'].get('likeCount',0)),
                                 video_view_count= int(vd_response['items'][0]['statistics']['viewCount']),
                                 comment=comtt3)
 
@@ -166,7 +166,7 @@ def ChannelDetail(cha):
                                 video_thumbnail=vd_response['items'][0]['snippet']['thumbnails'],
                                 
                                 video_favorite_count=int( vd_response['items'][0]['statistics']['favoriteCount']),
-                                video_like_count= int(vd_response['items'][0]['statistics']['likeCount']),
+                                video_like_count= int(vd_response['items'][0]['statistics'].get('likeCount',0)),
                                 video_view_count= int(vd_response['items'][0]['statistics']['viewCount']))
 
                 VIDEOS.append(videos)
